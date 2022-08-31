@@ -1,0 +1,39 @@
+.header {
+    width: 100%;
+    background-color: black;
+}
+
+.navbar {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.navbar-title {
+    color: rgb(240, 34, 34);
+    font-size: 30px;
+}
+
+
+.navbar-btn-signin, .navbar-btn-signup {
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+
+}
+
+
+.navbar-buttons {
+    display: flex;
+    gap: 24px;
+}
+
+
+.navbar-btn-signin {
+    background-color: red;
+    padding: 5px 10px;
+    border-radius: 5px;
+}

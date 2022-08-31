@@ -1,0 +1,50 @@
+.home {
+    width: 100%;
+}
+
+
+.container-home {
+    width: 80%;
+    margin: 20px auto;
+}
+
+
+.input-home-movies {
+    background-color: black;
+    display: grid;
+    width: 70%;
+    grid-template-columns: 80% 20%;
+}
+
+.input-home-movies button {
+    color: white;
+    cursor: pointer;
+}
+
+
+.movies {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 24px;
+}
+
+
+.movie {
+    background-color: whitesmoke;
+    padding: 15px 10px;
+    border-radius: 5px;
+    position: relative;
+}
+.movie img {
+    width: 100%;
+}
+
+
+.movie .title {
+    font-weight: bold;
+}
+.movie p {
+    font-weight: 300;
+    font-size: 12px;
+}
