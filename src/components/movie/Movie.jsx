@@ -1,17 +1,24 @@
 import React from 'react'
 import { useEffect } from 'react';
 import { useState } from 'react'
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react';
 
-const Movie = () => {
+import {Autoplay} from 'swiper'
+
+// Import Swiper styles
+import 'swiper/css';
+
+const Movie = ({linkApi, duration}) => {
+
 
     const [datas, setDatas] = useState([]);
 
-
     const getMovies = async () => {
-        
-        const resp = await fetch('https://imdb-api.com/en/API/Top250Movies/k_sk6ojr5f')
+    
+        await fetch(linkApi)
         .then(res => res.json())
-        .then(res => setDatas(res.items))
+        .then(res => setDatas(res.Search))
     }
 
 
@@ -19,21 +26,31 @@ const Movie = () => {
         getMovies()
     }, [])
 
-    console.log(datas)
-
 
 
   return (
-    <>
-        {datas.map((data, index) => (
-            index < 20 ? <div className="movie" key={index}>
-                <img src={data.image} alt="" />
-                <div className="title">{data.title}</div>
-                <p>{data.crew}</p>
-            </div> : false 
+    <Swiper
+      spaceBetween={10}
+      slidesPerView={6}
+      loop={true}
+      autoplay={{
+          delay: duration,
+          disableOnInteraction: false,
+        }}
+      modules={[Autoplay]}
+        >
+        {datas.map((data, index)=> (
+            <SwiperSlide   key={index}>
+            <div className="movie">
+            <img src={data.Poster} alt="" />
+            </div>
+            </SwiperSlide>
         ))}
-    </>
+      
+    </Swiper>
   )
 }
 
 export default Movie
+
+

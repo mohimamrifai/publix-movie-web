@@ -14,6 +14,7 @@
 
 body {
   font-family: var(--font-poppins);
+  background-color: #ddd;
 }
 
 
@@ -23,7 +24,22 @@ button {
   outline: none;
 }
 
+ul {
+  list-style: none;
+}
+
 input {
   padding: 10px 13px;
   outline: none;
+}
+
+.swiper-button-prev {
+  background-color: white;
+  height: 30px;
+  width: 30px;
+}
+
+.swiper-button-prev > * {
+  height: 20px !important;
+  width: 20px !important;
 }
